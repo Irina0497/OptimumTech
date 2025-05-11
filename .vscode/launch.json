@@ -1,0 +1,14 @@
+{
+    "configurations": [
+        {
+            "type": "java",
+            "name": "Spring Boot-ApiUserApplication<APIUser>",
+            "request": "launch",
+            "cwd": "${workspaceFolder}",
+            "mainClass": "com.APIUser.ApiUserApplication",
+            "projectName": "APIUser",
+            "args": "",
+            "envFile": "${workspaceFolder}/.env"
+        }
+    ]
+}
