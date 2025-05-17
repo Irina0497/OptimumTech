@@ -25,6 +25,9 @@ public class User {
 
     private String telefono;
 
+    @Column(nullable = false)
+    private String rol;
+
     @Column(name="fecha_creacion")
     private Date fechaCreacion;
 
