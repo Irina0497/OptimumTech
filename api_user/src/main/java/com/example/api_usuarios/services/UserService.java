@@ -14,7 +14,7 @@ import com.example.api_usuarios.models.requests.UserCreate;
 import com.example.api_usuarios.models.requests.UserUpdate;
 import com.example.api_usuarios.repositories.UserRepository;
 
-import jakarta.validation.Valid;
+// import jakarta.validation.Valid;
 
 @Service
 public class UserService {
