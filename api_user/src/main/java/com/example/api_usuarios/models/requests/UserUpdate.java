@@ -9,4 +9,5 @@ public class UserUpdate {
     private String nombre;
     private String telefono;
     private String password;
+    private String rol;
 }

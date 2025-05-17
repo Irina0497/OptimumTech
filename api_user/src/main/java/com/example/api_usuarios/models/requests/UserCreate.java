@@ -15,5 +15,8 @@ public class UserCreate {
     @NotBlank
     private String password;
 
+    @NotBlank
+    private String rol;
+
     private String telefono;
 }

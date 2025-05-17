@@ -41,6 +41,7 @@ public class UserService {
             nuevoUsuario.setEmail(usuario.getEmail());
             nuevoUsuario.setPassword(hashearPassword(usuario.getPassword()));
             nuevoUsuario.setTelefono(usuario.getTelefono());
+            nuevoUsuario.setRol(usuario.getRol());
 
             return userRepository.save(nuevoUsuario);
         } catch (Exception e) {
@@ -69,6 +70,9 @@ public class UserService {
 
         if(body.getPassword() != null) {
             usuario.setPassword(hashearPassword(body.getPassword()));
+        }
+        if(body.getRol() != null) {
+            usuario.setRol(body.getRol());
         }
 
         return userRepository.save(usuario);
