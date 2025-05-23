@@ -19,6 +19,7 @@ public class PaymentService {
     @Autowired
     private PaymentRepository paymentRepository;
 
+
     public List<Payment> obtenerTodos() {
         return paymentRepository.findAll();
     }
@@ -34,6 +35,7 @@ public class PaymentService {
         payment.setAmount(dto.getAmount());
         payment.setStatus("Pendiente");
         payment.setFechaPago(new Date());
+        payment.setPaymentMethod(dto.getPaymentMethod());
         return paymentRepository.save(payment);
     }
 

@@ -16,6 +16,9 @@ public class PaymentCreate {
     private String courseId;
 
     @Positive
-    private double amount;
+    private int amount;
+
+    @NotBlank
+    private String paymentMethod;
 
 }
