@@ -9,6 +9,7 @@ import org.springframework.web.server.ResponseStatusException;
 
 import com.example.api_educational.models.entities.Course;
 import com.example.api_educational.models.requests.CourseCreate;
+import com.example.api_educational.models.requests.CourseModify;
 import com.example.api_educational.repositories.CourseRepository;
 
 @Service
@@ -34,5 +35,20 @@ public class CourseService {
         Course nue = new Course();
         nue.setName(request.getName());
         return courseRepository.save(nue);
+    }
+
+    public Course actualizar(CourseModify req) {
+        Course request = getForId(req.getId());
+        if(req.getName() != null) {
+            request.setName(req.getName());
+        }
+        return courseRepository.save(request);
+    }
+    public void delete(int id){
+        Course course = courseRepository.findById(id).orElse(null);
+        if(course == null){
+            throw new ResponseStatusException(HttpStatus.NOT_FOUND,"Curso no encontrado");
+        }
+        courseRepository.delete(course);
     }
 }
