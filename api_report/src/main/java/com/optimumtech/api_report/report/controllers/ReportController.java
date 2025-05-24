@@ -19,7 +19,7 @@ public class ReportController {
     private ReportService reportService;
 
     
-    //http://localhost:8084/report
+    //http://localhost:8084/report/report
     @GetMapping("/report")
     public ResponseEntity<byte[]> generateReport(){
         try {

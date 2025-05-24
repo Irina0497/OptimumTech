@@ -2,6 +2,13 @@
     "configurations": [
         {
             "type": "java",
+            "name": "ReportApplication",
+            "request": "launch",
+            "mainClass": "com.optimumtech.api_report.report.ReportApplication",
+            "projectName": ""
+        },
+        {
+            "type": "java",
             "name": "Spring Boot-ApiEducativaApplication<api_educativa>",
             "request": "launch",
             "cwd": "${workspaceFolder}",
@@ -29,6 +36,16 @@
             "cwd": "${workspaceFolder}",
             "mainClass": "com.example.gateway.GatewayApplication",
             "projectName": "gateway",
+            "args": "",
+            "envFile": "${workspaceFolder}/.env"
+        },
+        {
+            "type": "java",
+            "name": "Spring Boot-ReportApplication<report>",
+            "request": "launch",
+            "cwd": "${workspaceFolder}",
+            "mainClass": "com.optimumtech.api_report.report.ReportApplication",
+            "projectName": "report",
             "args": "",
             "envFile": "${workspaceFolder}/.env"
         }
