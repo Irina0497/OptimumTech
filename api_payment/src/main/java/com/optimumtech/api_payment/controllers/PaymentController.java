@@ -3,6 +3,7 @@ package com.optimumtech.api_payment.controllers;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -14,6 +15,7 @@ import org.springframework.web.bind.annotation.RestController;
 
 import com.optimumtech.api_payment.models.entities.Payment;
 import com.optimumtech.api_payment.models.requests.PaymentCreate;
+import com.optimumtech.api_payment.models.requests.PaymentResponse;
 import com.optimumtech.api_payment.models.requests.PaymentUpdate;
 
 
@@ -40,7 +42,7 @@ public class PaymentController {
     }
 
     @PostMapping("/")
-    public Payment registrar(@Valid @RequestBody PaymentCreate body) {
+    public PaymentResponse registrar(@Valid @RequestBody PaymentCreate body) {
         return paymentService.registrar(body);
     }
 
@@ -54,4 +56,5 @@ public class PaymentController {
         paymentService.eliminar(id);
         return "ok";
     }
+
 }
