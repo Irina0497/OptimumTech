@@ -5,14 +5,14 @@
 	<parent>
 		<groupId>org.springframework.boot</groupId>
 		<artifactId>spring-boot-starter-parent</artifactId>
-		<version>3.4.5</version>
+		<version>3.5.0</version>
 		<relativePath/> <!-- lookup parent from repository -->
 	</parent>
 	<groupId>com.example</groupId>
-	<artifactId>api_educativa</artifactId>
+	<artifactId>api_course</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
-	<name>api_educativa</name>
-	<description>Api educativa</description>
+	<name>api_course</name>
+	<description>Api Course de edutech</description>
 	<url/>
 	<licenses>
 		<license/>
@@ -64,13 +64,6 @@
 			<artifactId>spring-boot-starter-test</artifactId>
 			<scope>test</scope>
 		</dependency>
-		<dependency> <!-- DOCUMENTATTION -->
-			<!-- http://localhost:8082/swagger-ui/index.html -->
-			<groupId>org.springdoc</groupId>
-			<artifactId>springdoc-openapi-starter-webmvc-ui</artifactId>
-			<version>2.5.0</version>
-		</dependency>
-
 	</dependencies>
 
 	<build>
