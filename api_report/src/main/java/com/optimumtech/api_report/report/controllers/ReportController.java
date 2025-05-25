@@ -23,14 +23,16 @@ public class ReportController {
     @GetMapping("/report")
     public ResponseEntity<byte[]> generateReport(){
         try {
-            byte [] report = reportService.generateReport("Estudiantes");
+            byte [] report = reportService.generateReport("ReporteUsuarios");
 
             HttpHeaders headers = new HttpHeaders();
             headers.setContentType(MediaType.APPLICATION_PDF);
             headers.add("Content-Disposition", "inline; filename=report.pdf");    
             return ResponseEntity.ok().headers(headers).body(report);
         } catch (Exception e) {
-            return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR).body("Error al generar el reporte".getBytes()); 
+            e.printStackTrace(); // Imprime el stacktrace en la consola
+            String errorMsg = "Error al generar el reporte: " + e.getMessage();
+            return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR).body(errorMsg.getBytes());
         }
     }
     
