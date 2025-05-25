@@ -1,153 +1,27 @@
 {
 	"info": {
-		"_postman_id": "5313a5aa-d63c-450f-85de-a0d52d869581",
+		"_postman_id": "3dd9c273-2377-4696-a765-50848198dbdf",
 		"name": "OptimumTech",
-		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "45049121"
 	},
 	"item": [
 		{
 			"name": "apigateway",
 			"item": [
 				{
-					"name": "api_user_gateway",
-					"item": [
-						{
-							"name": "obtenerUsuarios",
-							"request": {
-								"method": "GET",
-								"header": [],
-								"url": {
-									"raw": "http://localhost:8000/OptimumTech/usuario/",
-									"protocol": "http",
-									"host": [
-										"localhost"
-									],
-									"port": "8000",
-									"path": [
-										"OptimumTech",
-										"usuario",
-										""
-									]
-								}
-							},
-							"response": []
-						},
-						{
-							"name": "createUser",
-							"request": {
-								"method": "POST",
-								"header": [],
-								"body": {
-									"mode": "raw",
-									"raw": "{\r\n    \"nombre\":\"tabatha\",\r\n    \"password\":\"123456789\",\r\n    \"email\": \"tab.gamboa@duocuc.cl\",\r\n    \"rol\": \"estudiante\"\r\n\r\n}",
-									"options": {
-										"raw": {
-											"language": "json"
-										}
-									}
-								},
-								"url": {
-									"raw": "http://localhost:8000/OptimumTech/usuario/",
-									"protocol": "http",
-									"host": [
-										"localhost"
-									],
-									"port": "8000",
-									"path": [
-										"OptimumTech",
-										"usuario",
-										""
-									]
-								}
-							},
-							"response": []
-						},
-						{
-							"name": "updateUser",
-							"request": {
-								"method": "PUT",
-								"header": [],
-								"body": {
-									"mode": "raw",
-									"raw": "{\r\n    \"id\":2,\r\n    \"nombre\":\"tabatha\",\r\n    \"password\":\"123456789\",\r\n    \"email\": \"tab.gamboa@duocuc.cl\",\r\n    \"rol\": \"estudiante\"\r\n\r\n}",
-									"options": {
-										"raw": {
-											"language": "json"
-										}
-									}
-								},
-								"url": {
-									"raw": "http://localhost:8000/OptimumTech/usuario",
-									"protocol": "http",
-									"host": [
-										"localhost"
-									],
-									"port": "8000",
-									"path": [
-										"OptimumTech",
-										"usuario"
-									]
-								}
-							},
-							"response": []
-						},
-						{
-							"name": "obtenerUsuario",
-							"request": {
-								"method": "GET",
-								"header": [],
-								"url": {
-									"raw": "http://localhost:8000/OptimumTech/usuario/1",
-									"protocol": "http",
-									"host": [
-										"localhost"
-									],
-									"port": "8000",
-									"path": [
-										"OptimumTech",
-										"usuario",
-										"1"
-									]
-								}
-							},
-							"response": []
-						},
-						{
-							"name": "eliminarUsuario",
-							"request": {
-								"method": "DELETE",
-								"header": [],
-								"url": {
-									"raw": "http://localhost:8000/OptimumTech/usuario/2",
-									"protocol": "http",
-									"host": [
-										"localhost"
-									],
-									"port": "8000",
-									"path": [
-										"OptimumTech",
-										"usuario",
-										"2"
-									]
-								}
-							},
-							"response": []
-						}
-					]
-				},
-				{
 					"name": "api_course_gateway",
 					"item": [
 						{
-							"name": "contenido",
+							"name": "content",
 							"item": [
 								{
-									"name": "obtenerContenido",
+									"name": "getContent",
 									"request": {
 										"method": "GET",
 										"header": [],
 										"url": {
-											"raw": "http://localhost:8000/OptimumTech/contenido",
+											"raw": "http://localhost:8000/OptimumTech/gestionCursos/content",
 											"protocol": "http",
 											"host": [
 												"localhost"
@@ -155,20 +29,21 @@
 											"port": "8000",
 											"path": [
 												"OptimumTech",
-												"contenido"
+												"gestionCursos",
+												"content"
 											]
 										}
 									},
 									"response": []
 								},
 								{
-									"name": "createContenido",
+									"name": "createContent",
 									"request": {
 										"method": "POST",
 										"header": [],
 										"body": {
 											"mode": "raw",
-											"raw": "{\r\n    \"idCurso\":1, // id de curso enlazado a este contenido\r\n    \"descripcion\":\"tipos de datos en javascript\",\r\n    \"titulo\": \"tipo de datos\",\r\n    \"urlVideo\":\"http://localhost:8000/OptimumTech/contenido\"\r\n}",
+											"raw": "{\r\n    \"id\":2, // id de curso enlazado a este contenido\r\n    \"description\":\"tipos de datos en javascript\",\r\n    \"title\": \"tipo de datos\",\r\n    \"urlVideo\":\"http://localhost:8000/OptimumTech/contenido\"\r\n}",
 											"options": {
 												"raw": {
 													"language": "json"
@@ -176,7 +51,7 @@
 											}
 										},
 										"url": {
-											"raw": "http://localhost:8000/OptimumTech/contenido",
+											"raw": "http://localhost:8000/OptimumTech/gestionCursos/content",
 											"protocol": "http",
 											"host": [
 												"localhost"
@@ -184,7 +59,8 @@
 											"port": "8000",
 											"path": [
 												"OptimumTech",
-												"contenido"
+												"gestionCursos",
+												"content"
 											]
 										}
 									},
@@ -197,7 +73,7 @@
 										"header": [],
 										"body": {
 											"mode": "raw",
-											"raw": "{\r\n    \"id\":1, // id de contenido a modificar\r\n    \"descripcion\":\"tipos de datos en javascript\",\r\n    \"titulo\": \"tipo de datos js \",\r\n    \"urlVideo\":\"http://localhost:8000/OptimumTech/contenido\"\r\n}",
+											"raw": "{\r\n    \"id\":1, // id de contenido a modificar\r\n    \"description\":\"tipos de datos en javascript\",\r\n    \"title\": \"tipo de datos js \",\r\n    \"urlVideo\":\"http://localhost:8000/contenido\"\r\n}",
 											"options": {
 												"raw": {
 													"language": "json"
@@ -205,7 +81,7 @@
 											}
 										},
 										"url": {
-											"raw": "http://localhost:8000/OptimumTech/contenido",
+											"raw": "http://localhost:8000/OptimumTech/gestionCursos/content",
 											"protocol": "http",
 											"host": [
 												"localhost"
@@ -213,7 +89,8 @@
 											"port": "8000",
 											"path": [
 												"OptimumTech",
-												"contenido"
+												"gestionCursos",
+												"content"
 											]
 										}
 									},
@@ -234,7 +111,7 @@
 											}
 										},
 										"url": {
-											"raw": "http://localhost:8000/OptimumTech/contenido/1",
+											"raw": "http://localhost:8000/OptimumTech/gestionCursos/content/4",
 											"protocol": "http",
 											"host": [
 												"localhost"
@@ -242,8 +119,9 @@
 											"port": "8000",
 											"path": [
 												"OptimumTech",
-												"contenido",
-												"1"
+												"gestionCursos",
+												"content",
+												"4"
 											]
 										}
 									},
@@ -252,15 +130,15 @@
 							]
 						},
 						{
-							"name": "curso",
+							"name": "course",
 							"item": [
 								{
-									"name": "obtenerCursos",
+									"name": "getCoursess",
 									"request": {
 										"method": "GET",
 										"header": [],
 										"url": {
-											"raw": "http://localhost:8000/OptimumTech/curso",
+											"raw": "http://localhost:8000/OptimumTech/gestionCursos/course",
 											"protocol": "http",
 											"host": [
 												"localhost"
@@ -268,19 +146,20 @@
 											"port": "8000",
 											"path": [
 												"OptimumTech",
-												"curso"
+												"gestionCursos",
+												"course"
 											]
 										}
 									},
 									"response": []
 								},
 								{
-									"name": "obtenerCurso",
+									"name": "getCourse",
 									"request": {
 										"method": "GET",
 										"header": [],
 										"url": {
-											"raw": "http://localhost:8000/OptimumTech/curso/1",
+											"raw": "http://localhost:8000/OptimumTech/gestionCursos/course/1",
 											"protocol": "http",
 											"host": [
 												"localhost"
@@ -288,7 +167,8 @@
 											"port": "8000",
 											"path": [
 												"OptimumTech",
-												"curso",
+												"gestionCursos",
+												"course",
 												"1"
 											]
 										}
@@ -296,13 +176,13 @@
 									"response": []
 								},
 								{
-									"name": "createCurso",
+									"name": "createCourse",
 									"request": {
 										"method": "POST",
 										"header": [],
 										"body": {
 											"mode": "raw",
-											"raw": "{\r\n    \"nombre\": \"javascript\"\r\n}\r\n",
+											"raw": "{\r\n    \"name\": \"python\",\r\n    \"category\": \"programacion\",\r\n    \"level\": \"medium\",\r\n    \"description\": \"curso de programacion\"\r\n}\r\n",
 											"options": {
 												"raw": {
 													"language": "json"
@@ -310,7 +190,7 @@
 											}
 										},
 										"url": {
-											"raw": "http://localhost:8000/OptimumTech/curso",
+											"raw": "http://localhost:8000/OptimumTech/gestionCursos/course",
 											"protocol": "http",
 											"host": [
 												"localhost"
@@ -318,20 +198,21 @@
 											"port": "8000",
 											"path": [
 												"OptimumTech",
-												"curso"
+												"gestionCursos",
+												"course"
 											]
 										}
 									},
 									"response": []
 								},
 								{
-									"name": "updateCurso",
+									"name": "updateCourse",
 									"request": {
 										"method": "PUT",
 										"header": [],
 										"body": {
 											"mode": "raw",
-											"raw": "{\r\n    \"nombre\": \"javascript\"\r\n}\r\n",
+											"raw": "{\r\n    \"id\": 1,\r\n    \"name\": \"javascript\",\r\n    \"category\": \"programacion\",\r\n    \"level\": \"medium\",\r\n    \"description\": \"curso de programacion\"\r\n}\r\n",
 											"options": {
 												"raw": {
 													"language": "json"
@@ -339,7 +220,7 @@
 											}
 										},
 										"url": {
-											"raw": "http://localhost:8000/OptimumTech/curso",
+											"raw": "http://localhost:8000/OptimumTech/gestionCursos/course",
 											"protocol": "http",
 											"host": [
 												"localhost"
@@ -347,14 +228,15 @@
 											"port": "8000",
 											"path": [
 												"OptimumTech",
-												"curso"
+												"gestionCursos",
+												"course"
 											]
 										}
 									},
 									"response": []
 								},
 								{
-									"name": "deleteCurso",
+									"name": "deleteCourse",
 									"request": {
 										"method": "DELETE",
 										"header": [],
@@ -368,7 +250,7 @@
 											}
 										},
 										"url": {
-											"raw": "http://localhost:8000/OptimumTech/curso/1",
+											"raw": "http://localhost:8000/OptimumTech/gestionCursos/course/2",
 											"protocol": "http",
 											"host": [
 												"localhost"
@@ -376,14 +258,291 @@
 											"port": "8000",
 											"path": [
 												"OptimumTech",
-												"curso",
-												"1"
+												"gestionCursos",
+												"course",
+												"2"
 											]
 										}
 									},
 									"response": []
 								}
 							]
+						}
+					]
+				},
+				{
+					"name": "api_userr_gateway",
+					"item": [
+						{
+							"name": "getUsers",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:8000/OptimumTech/gestionUsuarios/usuario/",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8000",
+									"path": [
+										"OptimumTech",
+										"gestionUsuarios",
+										"usuario",
+										""
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "createUser",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"nombre\":\"tabatha\",\r\n    \"password\":\"123456789\",\r\n    \"email\": \"tagggg@duocuc.cl\",\r\n    \"rol\": \"estudiante\"\r\n\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:8000/OptimumTech/gestionUsuarios/usuario/",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8000",
+									"path": [
+										"OptimumTech",
+										"gestionUsuarios",
+										"usuario",
+										""
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "updateUser",
+							"request": {
+								"method": "PUT",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"id\":5,\r\n    \"activo\": false\r\n\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:8000/OptimumTech/gestionUsuarios/usuario",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8000",
+									"path": [
+										"OptimumTech",
+										"gestionUsuarios",
+										"usuario"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "getUser",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:8000/OptimumTech/gestionUsuarios/usuario/5",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8000",
+									"path": [
+										"OptimumTech",
+										"gestionUsuarios",
+										"usuario",
+										"5"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "deleteUser",
+							"request": {
+								"method": "DELETE",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:8000/OptimumTech/gestionUsuarios/usuario/5",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8000",
+									"path": [
+										"OptimumTech",
+										"gestionUsuarios",
+										"usuario",
+										"5"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "api_payment_gateway",
+					"item": [
+						{
+							"name": "getPayment",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:8000/OptimumTech/gestionPagos/payment/5",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8000",
+									"path": [
+										"OptimumTech",
+										"gestionPagos",
+										"payment",
+										"5"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "getPayments",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:8000/OptimumTech/gestionPagos/payment/",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8000",
+									"path": [
+										"OptimumTech",
+										"gestionPagos",
+										"payment",
+										""
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "createPayment",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"courseId\":1,\r\n    \"userId\":3,\r\n    \"paymentMethod\": \"Tarjeta de crédito\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:8000/OptimumTech/gestionPagos/payment/",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8000",
+									"path": [
+										"OptimumTech",
+										"gestionPagos",
+										"payment",
+										""
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "updatePayment",
+							"request": {
+								"method": "PUT",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"id\": 17,\r\n    \"status\": \"Completado\",\r\n    \"amount\":200,\r\n    \"paymentMethod\": \"Paypal\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:8000/OptimumTech/gestionPagos/payment",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8000",
+									"path": [
+										"OptimumTech",
+										"gestionPagos",
+										"payment"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "api_reporte_gateway",
+					"item": [
+						{
+							"name": "getReportUser",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"method": "GET",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"id\": 17,\r\n    \"status\": \"Completado\",\r\n    \"amount\":200,\r\n    \"paymentMethod\": \"Paypal\"\r\n}"
+								},
+								"url": {
+									"raw": "http://localhost:8000/OptimumTech/export/report/user",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8000",
+									"path": [
+										"OptimumTech",
+										"export",
+										"report",
+										"user"
+									]
+								}
+							},
+							"response": []
 						}
 					]
 				}
@@ -393,7 +552,7 @@
 			"name": "api_user",
 			"item": [
 				{
-					"name": "obtenerUsuarios",
+					"name": "getUsers",
 					"request": {
 						"method": "GET",
 						"header": [],
@@ -419,7 +578,7 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\r\n    \"nombre\":\"tabatha\",\r\n    \"password\":\"123456789\",\r\n    \"email\": \"tab.gamboa@duocuc.cl\",\r\n    \"rol\": \"estudiante\"\r\n\r\n}",
+							"raw": "{\r\n    \"nombre\":\"tabatha\",\r\n    \"password\":\"123456789\",\r\n    \"email\": \"tagggg@duocuc.cl\",\r\n    \"rol\": \"estudiante\"\r\n\r\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -448,7 +607,7 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\r\n    \"id\":2,\r\n    \"nombre\":\"tabatha\",\r\n    \"password\":\"123456789\",\r\n    \"email\": \"tab.gamboa@duocuc.cl\",\r\n    \"rol\": \"estudiante\"\r\n\r\n}",
+							"raw": "{\r\n    \"id\":5,\r\n    \"activo\": false\r\n\r\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -470,12 +629,12 @@
 					"response": []
 				},
 				{
-					"name": "obtenerUsuario",
+					"name": "getUser",
 					"request": {
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "http://localhost:8081/usuario/1",
+							"raw": "http://localhost:8081/usuario/5",
 							"protocol": "http",
 							"host": [
 								"localhost"
@@ -483,19 +642,19 @@
 							"port": "8081",
 							"path": [
 								"usuario",
-								"1"
+								"5"
 							]
 						}
 					},
 					"response": []
 				},
 				{
-					"name": "eliminarUsuario",
+					"name": "deleteUser",
 					"request": {
 						"method": "DELETE",
 						"header": [],
 						"url": {
-							"raw": "http://localhost:8081/usuario/2",
+							"raw": "http://localhost:8081/usuario/6",
 							"protocol": "http",
 							"host": [
 								"localhost"
@@ -503,129 +662,7 @@
 							"port": "8081",
 							"path": [
 								"usuario",
-								"2"
-							]
-						}
-					},
-					"response": []
-				}
-			]
-		},
-		{
-			"name": "api_payment",
-			"item": [
-				{
-					"name": "obtenerPayment",
-					"request": {
-						"method": "GET",
-						"header": [],
-						"url": {
-							"raw": "http://localhost:8083/payment/",
-							"protocol": "http",
-							"host": [
-								"localhost"
-							],
-							"port": "8083",
-							"path": [
-								"payment",
-								""
-							]
-						}
-					},
-					"response": []
-				},
-				{
-					"name": "createPayment",
-					"request": {
-						"method": "POST",
-						"header": [],
-						"body": {
-							"mode": "raw",
-							"raw": "{\r\n    \"userId\":10,\r\n    \"courseId\":2,\r\n    \"amount\":2000,\r\n    \"paymentMethod\":\"Paypal\"\r\n\r\n}",
-							"options": {
-								"raw": {
-									"language": "json"
-								}
-							}
-						},
-						"url": {
-							"raw": "http://localhost:8083/payment/",
-							"protocol": "http",
-							"host": [
-								"localhost"
-							],
-							"port": "8083",
-							"path": [
-								"payment",
-								""
-							]
-						}
-					},
-					"response": []
-				},
-				{
-					"name": "updateUser",
-					"request": {
-						"method": "PUT",
-						"header": [],
-						"body": {
-							"mode": "raw",
-							"raw": "{\r\n    \"id\":2,\r\n    \"status\":\"Complete\"\r\n}",
-							"options": {
-								"raw": {
-									"language": "json"
-								}
-							}
-						},
-						"url": {
-							"raw": "http://localhost:8083/payment",
-							"protocol": "http",
-							"host": [
-								"localhost"
-							],
-							"port": "8083",
-							"path": [
-								"payment"
-							]
-						}
-					},
-					"response": []
-				},
-				{
-					"name": "obtenerUsuario",
-					"request": {
-						"method": "GET",
-						"header": [],
-						"url": {
-							"raw": "http://localhost:8081/usuario/1",
-							"protocol": "http",
-							"host": [
-								"localhost"
-							],
-							"port": "8081",
-							"path": [
-								"usuario",
-								"1"
-							]
-						}
-					},
-					"response": []
-				},
-				{
-					"name": "eliminarUsuario",
-					"request": {
-						"method": "DELETE",
-						"header": [],
-						"url": {
-							"raw": "http://localhost:8081/usuario/2",
-							"protocol": "http",
-							"host": [
-								"localhost"
-							],
-							"port": "8081",
-							"path": [
-								"usuario",
-								"2"
+								"6"
 							]
 						}
 					},
@@ -637,35 +674,35 @@
 			"name": "api_course",
 			"item": [
 				{
-					"name": "contenido",
+					"name": "content",
 					"item": [
 						{
-							"name": "obtenerContenido",
+							"name": "getContent",
 							"request": {
 								"method": "GET",
 								"header": [],
 								"url": {
-									"raw": "http://localhost:8082/contenido",
+									"raw": "http://localhost:8082/content",
 									"protocol": "http",
 									"host": [
 										"localhost"
 									],
 									"port": "8082",
 									"path": [
-										"contenido"
+										"content"
 									]
 								}
 							},
 							"response": []
 						},
 						{
-							"name": "createContenido",
+							"name": "createContent",
 							"request": {
 								"method": "POST",
 								"header": [],
 								"body": {
 									"mode": "raw",
-									"raw": "{\r\n    \"idCurso\":1, // id de curso enlazado a este contenido\r\n    \"descripcion\":\"tipos de datos en javascript\",\r\n    \"titulo\": \"tipo de datos\",\r\n    \"urlVideo\":\"http://localhost:8000/OptimumTech/contenido\"\r\n}",
+									"raw": "{\r\n    \"id\":2, // id de curso enlazado a este contenido\r\n    \"description\":\"tipos de datos en javascript\",\r\n    \"title\": \"tipo de datos\",\r\n    \"urlVideo\":\"http://localhost:8000/OptimumTech/contenido\"\r\n}",
 									"options": {
 										"raw": {
 											"language": "json"
@@ -673,14 +710,14 @@
 									}
 								},
 								"url": {
-									"raw": "http://localhost:8082/contenido",
+									"raw": "http://localhost:8082/content",
 									"protocol": "http",
 									"host": [
 										"localhost"
 									],
 									"port": "8082",
 									"path": [
-										"contenido"
+										"content"
 									]
 								}
 							},
@@ -693,7 +730,7 @@
 								"header": [],
 								"body": {
 									"mode": "raw",
-									"raw": "{\r\n    \"id\":1, // id de contenido a modificar\r\n    \"descripcion\":\"tipos de datos en javascript\",\r\n    \"titulo\": \"tipo de datos js \",\r\n    \"urlVideo\":\"http://localhost:8000/OptimumTech/contenido\"\r\n}",
+									"raw": "{\r\n    \"id\":1, // id de contenido a modificar\r\n    \"description\":\"tipos de datos en javascript\",\r\n    \"title\": \"tipo de datos js \",\r\n    \"urlVideo\":\"http://localhost:8000/contenido\"\r\n}",
 									"options": {
 										"raw": {
 											"language": "json"
@@ -701,14 +738,14 @@
 									}
 								},
 								"url": {
-									"raw": "http://localhost:8082/contenido",
+									"raw": "http://localhost:8082/content",
 									"protocol": "http",
 									"host": [
 										"localhost"
 									],
 									"port": "8082",
 									"path": [
-										"contenido"
+										"content"
 									]
 								}
 							},
@@ -729,15 +766,15 @@
 									}
 								},
 								"url": {
-									"raw": "http://localhost:8082/contenido/1",
+									"raw": "http://localhost:8082/content/4",
 									"protocol": "http",
 									"host": [
 										"localhost"
 									],
 									"port": "8082",
 									"path": [
-										"contenido",
-										"1"
+										"content",
+										"4"
 									]
 								}
 							},
@@ -746,41 +783,41 @@
 					]
 				},
 				{
-					"name": "curso",
+					"name": "course",
 					"item": [
 						{
-							"name": "obtenerCursos",
+							"name": "getCoursess",
 							"request": {
 								"method": "GET",
 								"header": [],
 								"url": {
-									"raw": "http://localhost:8082/curso",
+									"raw": "http://localhost:8082/course",
 									"protocol": "http",
 									"host": [
 										"localhost"
 									],
 									"port": "8082",
 									"path": [
-										"curso"
+										"course"
 									]
 								}
 							},
 							"response": []
 						},
 						{
-							"name": "obtenerCurso",
+							"name": "getCourse",
 							"request": {
 								"method": "GET",
 								"header": [],
 								"url": {
-									"raw": "http://localhost:8082/curso/1",
+									"raw": "http://localhost:8082/course/1",
 									"protocol": "http",
 									"host": [
 										"localhost"
 									],
 									"port": "8082",
 									"path": [
-										"curso",
+										"course",
 										"1"
 									]
 								}
@@ -788,13 +825,13 @@
 							"response": []
 						},
 						{
-							"name": "createCurso",
+							"name": "createCourse",
 							"request": {
 								"method": "POST",
 								"header": [],
 								"body": {
 									"mode": "raw",
-									"raw": "{\r\n    \"nombre\": \"javascript\"\r\n}\r\n",
+									"raw": "{\r\n    \"name\": \"python\",\r\n    \"category\": \"programacion\",\r\n    \"level\": \"medium\",\r\n    \"description\": \"curso de programacion\"\r\n}\r\n",
 									"options": {
 										"raw": {
 											"language": "json"
@@ -802,27 +839,27 @@
 									}
 								},
 								"url": {
-									"raw": "http://localhost:8082/curso",
+									"raw": "http://localhost:8082/course",
 									"protocol": "http",
 									"host": [
 										"localhost"
 									],
 									"port": "8082",
 									"path": [
-										"curso"
+										"course"
 									]
 								}
 							},
 							"response": []
 						},
 						{
-							"name": "updateCurso",
+							"name": "updateCourse",
 							"request": {
 								"method": "PUT",
 								"header": [],
 								"body": {
 									"mode": "raw",
-									"raw": "{\r\n    \"nombre\": \"javascript\"\r\n}\r\n",
+									"raw": "{\r\n    \"id\": 1,\r\n    \"name\": \"javascript\",\r\n    \"category\": \"programacion\",\r\n    \"level\": \"medium\",\r\n    \"description\": \"curso de programacion\"\r\n}\r\n",
 									"options": {
 										"raw": {
 											"language": "json"
@@ -830,21 +867,21 @@
 									}
 								},
 								"url": {
-									"raw": "http://localhost:8082/curso",
+									"raw": "http://localhost:8082/course",
 									"protocol": "http",
 									"host": [
 										"localhost"
 									],
 									"port": "8082",
 									"path": [
-										"curso"
+										"course"
 									]
 								}
 							},
 							"response": []
 						},
 						{
-							"name": "deleteCurso",
+							"name": "deleteCourse",
 							"request": {
 								"method": "DELETE",
 								"header": [],
@@ -858,253 +895,15 @@
 									}
 								},
 								"url": {
-									"raw": "http://localhost:8082/curso/1",
+									"raw": "http://localhost:8082/course/2",
 									"protocol": "http",
 									"host": [
 										"localhost"
 									],
 									"port": "8082",
 									"path": [
-										"curso",
-										"1"
-									]
-								}
-							},
-							"response": []
-						}
-					]
-				},
-				{
-					"name": "contenido",
-					"item": [
-						{
-							"name": "obtenerContenido",
-							"request": {
-								"method": "GET",
-								"header": [],
-								"url": {
-									"raw": "http://localhost:8082/contenido",
-									"protocol": "http",
-									"host": [
-										"localhost"
-									],
-									"port": "8082",
-									"path": [
-										"contenido"
-									]
-								}
-							},
-							"response": []
-						},
-						{
-							"name": "createContenido",
-							"request": {
-								"method": "POST",
-								"header": [],
-								"body": {
-									"mode": "raw",
-									"raw": "{\r\n    \"idCurso\":1, // id de curso enlazado a este contenido\r\n    \"descripcion\":\"tipos de datos en javascript\",\r\n    \"titulo\": \"tipo de datos\",\r\n    \"urlVideo\":\"http://localhost:8000/OptimumTech/contenido\"\r\n}",
-									"options": {
-										"raw": {
-											"language": "json"
-										}
-									}
-								},
-								"url": {
-									"raw": "http://localhost:8082/contenido",
-									"protocol": "http",
-									"host": [
-										"localhost"
-									],
-									"port": "8082",
-									"path": [
-										"contenido"
-									]
-								}
-							},
-							"response": []
-						},
-						{
-							"name": "updateContenido",
-							"request": {
-								"method": "PUT",
-								"header": [],
-								"body": {
-									"mode": "raw",
-									"raw": "{\r\n    \"id\":1, // id de contenido a modificar\r\n    \"descripcion\":\"tipos de datos en javascript\",\r\n    \"titulo\": \"tipo de datos js \",\r\n    \"urlVideo\":\"http://localhost:8000/OptimumTech/contenido\"\r\n}",
-									"options": {
-										"raw": {
-											"language": "json"
-										}
-									}
-								},
-								"url": {
-									"raw": "http://localhost:8082/contenido",
-									"protocol": "http",
-									"host": [
-										"localhost"
-									],
-									"port": "8082",
-									"path": [
-										"contenido"
-									]
-								}
-							},
-							"response": []
-						},
-						{
-							"name": "deleteContenido",
-							"request": {
-								"method": "DELETE",
-								"header": [],
-								"body": {
-									"mode": "raw",
-									"raw": "{\r\n    \"id\":1, // id de contenido a modificar\r\n    \"descripcion\":\"tipos de datos en javascript\",\r\n    \"titulo\": \"tipo de datos js \",\r\n    \"urlVideo\":\"http://localhost:8000/OptimumTech/contenido\"\r\n}",
-									"options": {
-										"raw": {
-											"language": "json"
-										}
-									}
-								},
-								"url": {
-									"raw": "http://localhost:8082/contenido/1",
-									"protocol": "http",
-									"host": [
-										"localhost"
-									],
-									"port": "8082",
-									"path": [
-										"contenido",
-										"1"
-									]
-								}
-							},
-							"response": []
-						}
-					]
-				},
-				{
-					"name": "curso",
-					"item": [
-						{
-							"name": "obtenerCursos",
-							"request": {
-								"method": "GET",
-								"header": [],
-								"url": {
-									"raw": "http://localhost:8082/curso",
-									"protocol": "http",
-									"host": [
-										"localhost"
-									],
-									"port": "8082",
-									"path": [
-										"curso"
-									]
-								}
-							},
-							"response": []
-						},
-						{
-							"name": "obtenerCurso",
-							"request": {
-								"method": "GET",
-								"header": [],
-								"url": {
-									"raw": "http://localhost:8082/curso/1",
-									"protocol": "http",
-									"host": [
-										"localhost"
-									],
-									"port": "8082",
-									"path": [
-										"curso",
-										"1"
-									]
-								}
-							},
-							"response": []
-						},
-						{
-							"name": "createCurso",
-							"request": {
-								"method": "POST",
-								"header": [],
-								"body": {
-									"mode": "raw",
-									"raw": "{\r\n    \"nombre\": \"javascript\"\r\n}\r\n",
-									"options": {
-										"raw": {
-											"language": "json"
-										}
-									}
-								},
-								"url": {
-									"raw": "http://localhost:8082/curso",
-									"protocol": "http",
-									"host": [
-										"localhost"
-									],
-									"port": "8082",
-									"path": [
-										"curso"
-									]
-								}
-							},
-							"response": []
-						},
-						{
-							"name": "updateCurso",
-							"request": {
-								"method": "PUT",
-								"header": [],
-								"body": {
-									"mode": "raw",
-									"raw": "{\r\n    \"nombre\": \"javascript\"\r\n}\r\n",
-									"options": {
-										"raw": {
-											"language": "json"
-										}
-									}
-								},
-								"url": {
-									"raw": "http://localhost:8082/curso",
-									"protocol": "http",
-									"host": [
-										"localhost"
-									],
-									"port": "8082",
-									"path": [
-										"curso"
-									]
-								}
-							},
-							"response": []
-						},
-						{
-							"name": "deleteCurso",
-							"request": {
-								"method": "DELETE",
-								"header": [],
-								"body": {
-									"mode": "raw",
-									"raw": "{\r\n    \"nombre\": \"javascript\"\r\n}\r\n",
-									"options": {
-										"raw": {
-											"language": "json"
-										}
-									}
-								},
-								"url": {
-									"raw": "http://localhost:8082/curso/1",
-									"protocol": "http",
-									"host": [
-										"localhost"
-									],
-									"port": "8082",
-									"path": [
-										"curso",
-										"1"
+										"course",
+										"2"
 									]
 								}
 							},
@@ -1252,6 +1051,140 @@
 							"path": [
 								"v3",
 								"api-docs"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "api_payment",
+			"item": [
+				{
+					"name": "getPayment",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8083/payment/5",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8083",
+							"path": [
+								"payment",
+								"5"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "getPayments",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8083/payment/",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8083",
+							"path": [
+								"payment",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "createPayment",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"courseId\":1,\r\n    \"userId\":3,\r\n    \"paymentMethod\": \"Tarjeta de crédito\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8083/payment/",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8083",
+							"path": [
+								"payment",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "updatePayment",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"id\": 1,\r\n    \"status\": \"Completado\",\r\n    \"amount\":200,\r\n    \"paymentMethod\": \"Paypal\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8083/payment",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8083",
+							"path": [
+								"payment"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "api_reporte",
+			"item": [
+				{
+					"name": "getReportUser",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"id\": 17,\r\n    \"status\": \"Completado\",\r\n    \"amount\":200,\r\n    \"paymentMethod\": \"Paypal\"\r\n}"
+						},
+						"url": {
+							"raw": "http://localhost:8084/report/report",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8084",
+							"path": [
+								"report",
+								"report"
 							]
 						}
 					},
