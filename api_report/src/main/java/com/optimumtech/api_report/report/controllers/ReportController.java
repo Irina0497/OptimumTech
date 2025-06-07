@@ -9,7 +9,7 @@ import org.springframework.http.MediaType;
 import org.springframework.beans.factory.annotation.Autowired;
 import com.optimumtech.api_report.report.services.ReportService;
 import org.springframework.web.bind.annotation.GetMapping;
-
+import io.swagger.v3.oas.annotations.Operation;
 
 @RestController
 @RequestMapping("/report")
@@ -20,7 +20,11 @@ public class ReportController {
 
     
     //http://localhost:8084/report/report
-    @GetMapping("/user")
+    @GetMapping("/user")    
+    @Operation(
+        summary = "Genera reporte de usuarios",
+        description = "Genera un reporte en formato PDF con la información de los usuarios registrados."
+    )
     public ResponseEntity<byte[]> generateReport(){
         try {
             byte [] report = reportService.generateReport("ReporteUsuarios");

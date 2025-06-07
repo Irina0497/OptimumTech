@@ -17,6 +17,8 @@ import com.example.api_course.models.requests.ContentCreate;
 import com.example.api_course.models.requests.ContentModify;
 import com.example.api_course.services.ContentService;
 
+import io.swagger.v3.oas.annotations.Operation;
+
 @RestController
 @RequestMapping("/content")
 public class ContentController {
@@ -25,22 +27,38 @@ public class ContentController {
     private ContentService contentService;
 
     @GetMapping("")
+    @Operation(
+        summary = "Obtiene todos los contenidos", 
+        description = "Recupera una lista completa de todos los contenidos registrados en el sistema."
+    )
     public List<Content> getAllContents() {
         return contentService.getAllContents();
     }
 
     @PostMapping("")
+    @Operation(
+        summary = "Crea un nuevo contenido", 
+        description = "Permite crear un nuevo contenido con los datos proporcionados."
+    )
     public Content createContent(@RequestBody ContentCreate body) {
         return contentService.createContent(body);
     }
 
     @DeleteMapping("/{id}")
+    @Operation(
+        summary = "Elimina un contenido por ID", 
+        description = "Elimina un contenido existente utilizando su ID."
+    )
     public String deleteContent(@PathVariable int id) {
         contentService.deleteContent(id);
         return "Contenido eliminado";
     }
 
     @PutMapping("")
+    @Operation(
+        summary = "Actualiza un contenido existente", 
+        description = "Permite actualizar los detalles de un contenido existente con los nuevos datos proporcionados."
+    )
     public Content updateContent(@RequestBody ContentModify body) {
         return contentService.updateContent(body);
     }
