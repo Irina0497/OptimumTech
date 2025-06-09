@@ -67,7 +67,7 @@ public class UserService {
 
             return userRepository.save(nuevoUsuario);
         } catch (Exception e) {
-            throw new ResponseStatusException(HttpStatus.BAD_REQUEST,"Usuario registrado");
+            throw new ResponseStatusException(HttpStatus.BAD_REQUEST, e.getMessage(), e);
         }
     }
 

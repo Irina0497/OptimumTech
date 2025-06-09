@@ -2,6 +2,7 @@ package com.example.api_usuarios.models.requests;
 import jakarta.validation.constraints.Email;
 import jakarta.validation.constraints.NotBlank;
 import lombok.Data;
+import java.util.List;
 
 @Data
 public class UserCreate {
@@ -15,8 +16,15 @@ public class UserCreate {
     @NotBlank
     private String password;
 
-    @NotBlank
-    private String rol;
-
     private String telefono;
+
+    private List<String> roles;
+
+    public List<String> getRoles() {
+    return roles;
+}
+
+    public void setRoles(List<String> roles) {
+        this.roles = roles;
+}
 }
