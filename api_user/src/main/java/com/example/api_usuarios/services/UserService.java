@@ -55,7 +55,7 @@ public class UserService {
             // Asignar roles
             if (usuario.getRoles() != null && !usuario.getRoles().isEmpty()) {
                 for (String nombreRol : usuario.getRoles()) {
-                    Role role = roleRepository.findByNombre(nombreRol);
+                    Role role = roleRepository.findByName(nombreRol);
                     if (role == null) {
                         throw new ResponseStatusException(HttpStatus.BAD_REQUEST, "Rol '" + nombreRol + "' Rol no existente, coloque uno rol válido.");
                     }
@@ -101,7 +101,7 @@ public class UserService {
         if(body.getRoles() != null && !body.getRoles().isEmpty()) {
             usuario.getRoles().clear();
             for (String nombreRol : body.getRoles()) {
-                Role role = roleRepository.findByNombre(nombreRol);
+                Role role = roleRepository.findByName(nombreRol);
                 if (role == null) {
                     throw new ResponseStatusException(HttpStatus.BAD_REQUEST, "Rol '" + nombreRol + "' no existente, coloque uno válido.");
                 }

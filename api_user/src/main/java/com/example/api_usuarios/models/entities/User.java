@@ -31,7 +31,7 @@ public class User {
     //private String rol;
 
     
-
+    
     @ManyToMany(fetch = FetchType.LAZY)
     @JoinTable(
         name = "usuario_roles",
@@ -44,5 +44,6 @@ public class User {
     private Date fechaCreacion;
 
     private Boolean activo;
+    
     
 }
