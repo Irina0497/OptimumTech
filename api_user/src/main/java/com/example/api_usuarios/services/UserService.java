@@ -12,15 +12,24 @@ import org.springframework.web.server.ResponseStatusException;
 import com.example.api_usuarios.models.entities.User;
 import com.example.api_usuarios.models.requests.UserCreate;
 import com.example.api_usuarios.models.requests.UserUpdate;
+import com.example.api_usuarios.repositories.RoleRepository;
 import com.example.api_usuarios.repositories.UserRepository;
+import com.example.api_usuarios.models.entities.Role;
+
 
 // import jakarta.validation.Valid;
 
 @Service
 public class UserService {
     
-    @Autowired
+    private RoleRepository roleRepository;
     private UserRepository userRepository;
+
+    @Autowired
+    public UserService(UserRepository userRepository, RoleRepository roleRepository) {
+        this.userRepository = userRepository;
+        this.roleRepository = roleRepository;
+    }
 
     public List<User> obtenerTodos() {
         return userRepository.findAll();    
@@ -41,11 +50,24 @@ public class UserService {
             nuevoUsuario.setEmail(usuario.getEmail());
             nuevoUsuario.setPassword(hashearPassword(usuario.getPassword()));
             nuevoUsuario.setTelefono(usuario.getTelefono());
-            nuevoUsuario.setRol(usuario.getRol());
+            //nuevoUsuario.setRol(usuario.getRol());
+
+            // Asignar roles
+            if (usuario.getRoles() != null && !usuario.getRoles().isEmpty()) {
+                for (String nombreRol : usuario.getRoles()) {
+                    Role role = roleRepository.findByName(nombreRol);
+                    if (role == null) {
+                        throw new ResponseStatusException(HttpStatus.BAD_REQUEST, "Rol '" + nombreRol + "' Rol no existente, coloque uno rol válido.");
+                    }
+                    nuevoUsuario.getRoles().add(role);
+                }
+            } else {
+                throw new ResponseStatusException(HttpStatus.BAD_REQUEST, "Debe asignar al menos un rol al usuario.");
+            }
 
             return userRepository.save(nuevoUsuario);
         } catch (Exception e) {
-            throw new ResponseStatusException(HttpStatus.BAD_REQUEST,"Usuario registrado");
+            throw new ResponseStatusException(HttpStatus.BAD_REQUEST, e.getMessage(), e);
         }
     }
 
@@ -71,11 +93,20 @@ public class UserService {
         if(body.getPassword() != null) {
             usuario.setPassword(hashearPassword(body.getPassword()));
         }
-        if(body.getRol() != null) {
-            usuario.setRol(body.getRol());
-        }
+        
         if(body.getActivo() != null) {
             usuario.setActivo(body.getActivo());
+        }
+
+        if(body.getRoles() != null && !body.getRoles().isEmpty()) {
+            usuario.getRoles().clear();
+            for (String nombreRol : body.getRoles()) {
+                Role role = roleRepository.findByName(nombreRol);
+                if (role == null) {
+                    throw new ResponseStatusException(HttpStatus.BAD_REQUEST, "Rol '" + nombreRol + "' no existente, coloque uno válido.");
+                }
+                usuario.getRoles().add(role);
+            }
         }
 
         return userRepository.save(usuario);
