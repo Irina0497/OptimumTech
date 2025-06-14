@@ -26,7 +26,7 @@ public class TicketService {
         return ticketRepository.findAll();    
     }
 
-    public Ticket obtenerPorId(int id){
+    public Ticket obtenerPorId(String id){
         return ticketRepository.findById(id).orElse(null);
     }
 
@@ -49,7 +49,7 @@ public class TicketService {
     }
 
     public Ticket actualizar(TicketUpdate body) {
-        Ticket ticket = ticketRepository.findById(body.getId()); //.orElse(null);
+        Ticket ticket = ticketRepository.findById(body.getId()).orElse(null);
         if (ticket == null) {
             throw new ResponseStatusException(HttpStatus.NOT_FOUND, "Ticket no encontrado para actualizar");
         }
