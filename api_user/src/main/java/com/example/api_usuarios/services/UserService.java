@@ -76,6 +76,11 @@ public class UserService {
         return passwordEncoder.encode(password); 
     }
 
+    public boolean comprobarPassword(String password, String hash) {
+        BCryptPasswordEncoder passwordEncoder = new BCryptPasswordEncoder();
+        return passwordEncoder.matches(password, hash); 
+    }
+
     public User actualizar(UserUpdate body) {
         User usuario = userRepository.findById(body.getId()).orElse(null);
         if (usuario == null) {
