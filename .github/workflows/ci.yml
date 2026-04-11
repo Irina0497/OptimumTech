@@ -15,6 +15,7 @@ jobs:
       - name: Instalar yamllint
         run: python3 -m pip install yamllint
       - name: Validar YAML de workflows
-        run: yamllint -d "{extends: default, rules: {line-length: disable}}" .github/workflows
+        run: |
+          yamllint -d '{extends: default, rules: {line-length: disable}}' .github/workflows
       - name: Validacion simple
         run: echo "CI ejecutada correctamente en develop/main"
