@@ -1,6 +1,7 @@
+---
 name: CI Parcial1
 
-on:
+'on':
   push:
     branches: [develop]
   pull_request:
